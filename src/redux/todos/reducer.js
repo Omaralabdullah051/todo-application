@@ -33,7 +33,7 @@ const todoReducer = (state = initialState, action) => {
 
         return {
           ...todo,
-          completed: !state.completed,
+          completed: !todo.completed,
         };
       });
 
