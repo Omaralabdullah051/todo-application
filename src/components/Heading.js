@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import tickImage from "../assets/images/double-tick.png";
 import noteImage from "../assets/images/notes.png";
-import { added, allCompleted, clearCompleted } from "../redux/todos/actions";
+import { allCompleted, clearCompleted } from "../redux/todos/actions";
+import addTodo from "../redux/todos/thunk/addTodo";
 
 export default function Heading() {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export default function Heading() {
   const handleAddTodo = (e) => {
     e.preventDefault();
     if (todoText) {
-      dispatch(added(todoText));
+      dispatch(addTodo(todoText));
     } else {
       alert("Please write a todo first");
     }
